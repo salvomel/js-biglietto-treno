@@ -16,7 +16,7 @@ let discount40 = (price * 40) / 100;
 // If per sconto in base all'età
 if( userAge < 18 ) {
     price = price - discount20;
-} else if( userAge > 65 ) {
+} else if( userAge >= 65 ) {
     price = price - discount40
 }
 
@@ -25,7 +25,7 @@ let message;
 
 if( userAge < 18 ) {
     message = 'Il prezzo del biglietto con lo sconto under18 è:';
-} else if( userAge > 65 ) {
+} else if( userAge >= 65 ) {
     message = 'Il prezzo del biglietto con lo sconto over65 è:';
 } else {
     message = 'Il prezzo del biglietto è:';
