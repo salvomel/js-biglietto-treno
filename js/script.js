@@ -17,7 +17,7 @@ let discount40 = (price * 40) / 100;
 if( userAge < 18 ) {
     price = price - discount20;
 } else if( userAge >= 65 ) {
-    price = price - discount40
+    price = price - discount40;
 }
 
 // Messaggio all'utente del prezzo in base allo sconto e all'età
