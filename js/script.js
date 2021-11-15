@@ -3,33 +3,24 @@
 const userKm = parseInt( prompt('Indicare il numero di chilometri') );
 
 // Chiedo all'utente l'età
-const userAge = parseInt( prompt('Indicare la propra età') );
+const userAge = parseInt( prompt('Indicare la propria età') );
 
 // LOGICA
-// Calcolo prezzo 0.21 €/km
-let price = userKm * '0.21';
-
-// Sconto età under18 e over 65
-let discount20 = (price * 20) / 100;
-let discount40 = (price * 40) / 100;
+// Calcolo prezzo
+let price = userKm * 0.21;
+let discount = 0;
+let userMessage = 'Il prezzo del biglietto è:';
 
 // If per sconto in base all'età
 if( userAge < 18 ) {
-    price = price - discount20;
+    discount = price * 0.2;
+    price = price - discount;
+    userMessage = 'Il prezzo del biglietto con lo sconto under18 è:';
 } else if( userAge >= 65 ) {
-    price = price - discount40;
-}
-
-// Messaggio all'utente del prezzo in base allo sconto e all'età
-let message;
-
-if( userAge < 18 ) {
-    message = 'Il prezzo del biglietto con lo sconto under18 è:';
-} else if( userAge >= 65 ) {
-    message = 'Il prezzo del biglietto con lo sconto over65 è:';
-} else {
-    message = 'Il prezzo del biglietto è:';
+    discount = price * 0.4;
+    price = price - discount;
+    userMessage = 'Il prezzo del biglietto con lo sconto over65 è:';
 }
 
 // OUTPUT
-alert(message + '  ' + price.toFixed(2) + ' € ');
+alert(userMessage + '  ' + price.toFixed(2) + ' € ');
